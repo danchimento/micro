@@ -8,6 +8,24 @@
           "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
           "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets": {}
         }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RabbitMQ.Client/5.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {}
+        }
       }
     }
   },
@@ -74,11 +92,60 @@
         "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
         "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll"
       ]
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
+    "RabbitMQ.Client/5.1.2": {
+      "sha512": "Xhj+un0pw4N7h37SZWptxl/NEv7f1RLHwZhXjqzkCm3w3IdbFJh+HjVyPaciD848BUYLGoEQzadx90nShsbs4Q==",
+      "type": "package",
+      "path": "rabbitmq.client/5.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net451/RabbitMQ.Client.dll",
+        "lib/net451/RabbitMQ.Client.xml",
+        "lib/netstandard1.5/RabbitMQ.Client.dll",
+        "lib/netstandard1.5/RabbitMQ.Client.xml",
+        "lib/netstandard2.0/RabbitMQ.Client.dll",
+        "lib/netstandard2.0/RabbitMQ.Client.xml",
+        "rabbitmq.client.5.1.2.nupkg.sha512",
+        "rabbitmq.client.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.9.5"
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.9.5",
+      "RabbitMQ.Client >= 5.1.2",
+      "newtonsoft.json"
     ]
   },
   "packageFolders": {
@@ -126,6 +193,14 @@
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
             "version": "[1.9.5, )"
+          },
+          "RabbitMQ.Client": {
+            "target": "Package",
+            "version": "[5.1.2, )"
+          },
+          "newtonsoft.json": {
+            "target": "Package",
+            "version": "(, )"
           }
         },
         "imports": [

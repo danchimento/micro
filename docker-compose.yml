@@ -1,18 +1,30 @@
 version: '3.4'
 
 services:
-  micro.gateway:
-    container_name: gateway
-    image: micronginx
+  micro.queue:
+    container_name: queue
+    image: rabbitmq:3-management
+    # build:
+    #   context: .
+    #   dockerfile: Micro.Gateway/Dockerfile
+    ports:
+      - 5001:15672
+      - 5672:5672
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:15672"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+  
+  micro.events:
+    container_name: events
+    image: microevents
     build:
       context: .
-      dockerfile: Micro.Gateway/Dockerfile
-    ports:
-      - 5000:5000
-      - 443:443
-    volumes:
-      - C:/nginx/html/:/usr/share/nginx/html
-      - C:/nginx/conf/:/etc/nginx
+      dockerfile: Micro.Events/Dockerfile
+    depends_on:
+      - micro.queue
+    restart: on-failure
   micro.orchestrator:
     container_name: orchestrator
     image: ${DOCKER_REGISTRY-}microorchestrator
@@ -25,3 +37,21 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    healthcheck:
+      retries: 3
+      interval: 5s
+
+  micro.gateway:
+    container_name: gateway
+    image: micronginx
+    build:
+      context: .
+      dockerfile: Micro.Gateway/Dockerfile
+    ports:
+      - 5000:5000
+      - 443:443
+    volumes:
+      - C:/nginx/html/:/usr/share/nginx/html
+      - C:/nginx/conf/:/etc/nginx
+    depends_on:
+      - micro.orchestrator
