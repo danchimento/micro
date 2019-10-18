@@ -1,8 +1,27 @@
 version: '3.4'
 
 services:
+  micro.gateway:
+    container_name: gateway
+    image: micronginx
+    build:
+      context: .
+      dockerfile: Micro.Gateway/Dockerfile
+    ports:
+      - 5000:5000
+      - 443:443
+    volumes:
+      - C:/nginx/html/:/usr/share/nginx/html
+      - C:/nginx/conf/:/etc/nginx
   micro.orchestrator:
+    container_name: orchestrator
     image: ${DOCKER_REGISTRY-}microorchestrator
     build:
       context: .
       dockerfile: Micro.Orchestrator/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
