@@ -7,3 +7,12 @@ C:\projects\Micro\Micro.Orchestrator\obj\Debug\netcoreapp3.0\staticwebassets\Mic
 C:\projects\Micro\Micro.Orchestrator\obj\Debug\netcoreapp3.0\Micro.Orchestrator.AssemblyInfoInputs.cache
 C:\projects\Micro\Micro.Orchestrator\obj\Debug\netcoreapp3.0\Micro.Orchestrator.AssemblyInfo.cs
 C:\projects\Micro\Micro.Orchestrator\obj\Debug\netcoreapp3.0\Micro.Orchestrator.RazorTargetAssemblyInfo.cache
+C:\projects\Micro\Micro.Orchestrator\bin\Debug\netcoreapp3.0\Micro.Orchestrator.exe
+C:\projects\Micro\Micro.Orchestrator\bin\Debug\netcoreapp3.0\Micro.Orchestrator.deps.json
+C:\projects\Micro\Micro.Orchestrator\bin\Debug\netcoreapp3.0\Micro.Orchestrator.runtimeconfig.json
+C:\projects\Micro\Micro.Orchestrator\bin\Debug\netcoreapp3.0\Micro.Orchestrator.runtimeconfig.dev.json
+C:\projects\Micro\Micro.Orchestrator\bin\Debug\netcoreapp3.0\Micro.Orchestrator.dll
+C:\projects\Micro\Micro.Orchestrator\bin\Debug\netcoreapp3.0\Micro.Orchestrator.pdb
+C:\projects\Micro\Micro.Orchestrator\obj\Debug\netcoreapp3.0\Micro.Orchestrator.MvcApplicationPartsAssemblyInfo.cache
+C:\projects\Micro\Micro.Orchestrator\obj\Debug\netcoreapp3.0\Micro.Orchestrator.dll
+C:\projects\Micro\Micro.Orchestrator\obj\Debug\netcoreapp3.0\Micro.Orchestrator.pdb

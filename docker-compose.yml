@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  micro.orchestrator:
+    image: ${DOCKER_REGISTRY-}microorchestrator
+    build:
+      context: .
+      dockerfile: Micro.Orchestrator/Dockerfile
