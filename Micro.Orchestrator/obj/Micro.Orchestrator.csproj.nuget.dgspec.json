@@ -30,7 +30,11 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\projects\\Micro\\Micro.Interfaces\\Micro.Interfaces.csproj": {
+                "projectPath": "C:\\projects\\Micro\\Micro.Interfaces\\Micro.Interfaces.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -52,7 +56,7 @@
             },
             "newtonsoft.json": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[12.0.2, )"
             }
           },
           "imports": [
