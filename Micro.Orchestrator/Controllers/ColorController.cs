@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using IdentityModel.Client;
 using Micro.Interfaces.Log;
 using Micro.Orchestrator.Dtos.Color;
 using Micro.Orchestrator.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Micro.Orchestrator.Controllers
 {
@@ -23,9 +27,11 @@ namespace Micro.Orchestrator.Controllers
         }
 
         [HttpGet]
+        [Authorize]
+        [Route("")]
         public IEnumerable<Color> GetColors() 
         {
-            eventManager.Fire(new LogEvent("GetColors Requested"));
+          //  eventManager.Fire(new LogEvent("GetColors Requested"));
 
             var colors = new List<Color> 
             {
@@ -34,7 +40,7 @@ namespace Micro.Orchestrator.Controllers
                 new Color { Name = "Red", Hex = "#0000FF"},    
             };
 
-            eventManager.Fire(new LogEvent($"GetColors Response: {JsonConvert.SerializeObject(colors)}"));
+          //  eventManager.Fire(new LogEvent($"GetColors Response: {JsonConvert.SerializeObject(colors)}"));
 
             return colors;
         }

@@ -26,7 +26,8 @@ namespace Micro.Auth
             var builder = services.AddIdentityServer()
                 .AddInMemoryIdentityResources(Config.Ids)
                 .AddInMemoryApiResources(Config.Apis)
-                .AddInMemoryClients(Config.Clients);
+                .AddInMemoryClients(Config.Clients)
+                .AddTestUsers(Config.Users);
 
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();
@@ -44,6 +45,8 @@ namespace Micro.Auth
             //app.UseRouting();
 
             app.UseIdentityServer();
+
+            app.UseHttpsRedirection();
 
             // uncomment, if you want to add MVC
             //app.UseAuthorization();

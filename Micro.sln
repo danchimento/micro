@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Events", "Micro.Event
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Auth", "Micro.Auth\Micro.Auth.csproj", "{2714E65A-1B6A-4AE9-88C0-E240E240D94C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Micro.Interfaces", "Micro.Interfaces\Micro.Interfaces.csproj", "{03A8BFA6-EB97-4986-B0A5-FAEF4FFD51D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2714E65A-1B6A-4AE9-88C0-E240E240D94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2714E65A-1B6A-4AE9-88C0-E240E240D94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2714E65A-1B6A-4AE9-88C0-E240E240D94C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03A8BFA6-EB97-4986-B0A5-FAEF4FFD51D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A8BFA6-EB97-4986-B0A5-FAEF4FFD51D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A8BFA6-EB97-4986-B0A5-FAEF4FFD51D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A8BFA6-EB97-4986-B0A5-FAEF4FFD51D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

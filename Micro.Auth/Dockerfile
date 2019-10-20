@@ -1,18 +1,21 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-buster-slim AS base
 WORKDIR /app
 
+EXPOSE 80
+
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
 COPY ["Micro.Auth/Micro.Auth.csproj", "Micro.Auth/"]
 RUN dotnet restore "Micro.Auth/Micro.Auth.csproj"
 COPY . .
 WORKDIR "/src/Micro.Auth"
-RUN dotnet build "Micro.Auth.csproj" -c Release -o /app/build
+RUN dotnet build "Micro.Auth.csproj" -c Debug -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Micro.Auth.csproj" -c Release -o /app/publish
+RUN dotnet publish "Micro.Auth.csproj" -c Debug -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
 ENTRYPOINT ["dotnet", "Micro.Auth.dll"]
