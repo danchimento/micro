@@ -1,22 +1,22 @@
 version: '3.4'
 
 services:
-  # micro.queue:
-  #   container_name: queue
-  #   image: rabbitmq:3-management
-  #   ports:
-  #     - 5001:15672
-  #     - 5672:5672
+  micro.queue:
+    container_name: queue
+    image: rabbitmq:3-management
+    ports:
+      - 5001:15672
+      - 5672:5672
   
-  # micro.events:
-  #   container_name: events
-  #   image: microevents
-  #   build:
-  #     context: .
-  #     dockerfile: Micro.Events/Dockerfile
-  #   depends_on:
-  #     - micro.queue
-  #   restart: on-failure
+  micro.events:
+    container_name: events
+    image: microevents
+    build:
+      context: .
+      dockerfile: Micro.Events/Dockerfile
+    depends_on:
+      - micro.queue
+    restart: on-failure
 
   micro.orchestrator:
     container_name: orchestrator
@@ -44,7 +44,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+
     ports:
-      - 5555:80
+    #  - 5555:80
     #  - ASPNETCORE_Kestrel__Certificates__Default__Password=password
     #  - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     #volumes:
@@ -57,11 +57,11 @@ services:
       context: .
       dockerfile: Micro.Gateway/Dockerfile
     ports:
-      - 5000:5000
+      - 5000
     volumes:
       - C:/nginx/html/:/usr/share/nginx/html
       - C:/nginx/conf/:/etc/nginx
       - C:/nginx/ssl/:/etc/nginx/ssl
     depends_on:
       - micro.orchestrator
-   #   - micro.auth
+      - micro.auth
